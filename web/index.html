@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+      If you are serving your web app in a path other than the root, change the
+      href value below to reflect the base path you are serving from.
+
+      The path provided below has to start and end with a slash "/" in order for
+      it to work correctly.
+
+      For more details:
+      * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+      This is a placeholder for base href that will be replaced by the value of
+      the `--base-href` argument provided to `flutter build`.
+    -->
+    <base href="$FLUTTER_BASE_HREF">
+
+    <meta charset="UTF-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="A new Flutter project.">
+
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="blocdemo">
+    <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png"/>
+
+    <title>blocdemo</title>
+    <link rel="manifest" href="manifest.json">
+
+    <script>
+    // The value below is injected by flutter build, do not touch.
+    const serviceWorkerVersion = null;
+
+
+    </script>
+    <!-- This script adds the flutter initialization JS code -->
+    <script src="flutter.js" defer></script>
+</head>
+<body>
+<style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .loader-container {
+      text-align: center;
+    }
+
+    .logo {
+      margin-bottom: 20px;
+    }
+
+    .logo-img {
+      max-height: 50px;
+      / Adjust the max height as needed /
+      width: auto;
+      / Maintain the aspect ratio /
+    }
+
+    .material-loader {
+      height: 4px;
+      width: 280px;
+      / Adjust the width as needed /
+      background-color: #f37021;
+      / Blue color /
+      position: relative;
+      overflow: hidden;
+    }
+
+    .material-loader::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #eeeeee;
+      / Blue color /
+      animation: loading 2s linear infinite;
+      / Adjust the duration as needed /
+    }
+
+    .loader-text {
+      margin-top: 10px;
+      / font-family: 'HellixTRIAL-Medium', sans-serif; /
+      / Use the custom font for the text /
+      font-size: 14px;
+      / Adjust the font size as needed /
+      color: #9e9e9e;
+      / Gray color /
+    }
+
+    @keyframes loading {
+      0% {
+        left: -100%;
+      }
+
+      100% {
+        left: 100%;
+      }
+    }
+
+    .hide-loader {
+      display: none;
+    }
+
+    </style>
+<div id="loader-container" class="loader-container">
+
+
+    <div class="logo">
+        <!--<img src="assets/assets/svgs/ic_appbar_logo_blue.svg" alt="Logo" class="logo-img">-->
+        <title>blocdemovv</title>
+    </div>
+
+
+    <div class="material-loader"></div>
+    <div class="loader-text">Loading...</div>
+</div>
+<script>
+    window.addEventListener('load', function(ev) {
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+          timeoutMillis: 500
+        },
+        onEntrypointLoaded: function(engineInitializer) {
+          engineInitializer.initializeEngine().then(function(appRunner) {
+            appRunner.runApp();
+          });
+        }
+      });
+    });
+
+
+</script>
+</body>
+</html>
